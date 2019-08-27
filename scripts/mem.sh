@@ -3,7 +3,7 @@
 case "$(uname -s)" in
   Linux)
     free -m | awk '
-      /buffers\/cache/ {printf "Mem:%2.2fG,%2.2fG\n", $3 / 1024, $4 / 1024}
+      /Mem\:/ {print $7}
     '
     ;;
   Darwin)
